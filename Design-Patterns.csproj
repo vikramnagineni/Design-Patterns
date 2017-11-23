@@ -46,13 +46,25 @@
     <Compile Include="AbstractFactory\Day1\Pizza.cs" />
     <Compile Include="AbstractFactory\Day1\PizzaOrderApp.cs" />
     <Compile Include="AbstractFactory\Day2\Pizza.cs" />
+    <Compile Include="AbstractFactory\Day2\PizzaFactory.cs" />
     <Compile Include="AbstractFactory\Day2\PizzaOrderApp.cs" />
     <Compile Include="AbstractFactory\Day3\Pizza.cs" />
-    <Compile Include="AbstractFactory\Day3\PizzaFactory.cs" />
     <Compile Include="AbstractFactory\Day3\PizzaOrderApp.cs" />
-    <Compile Include="AbstractFactory\Day4\IIngredientFactory.cs" />
     <Compile Include="AbstractFactory\Day4\Pizza.cs" />
+    <Compile Include="AbstractFactory\Day4\PizzaFactory.cs" />
     <Compile Include="AbstractFactory\Day4\PizzaOrderApp.cs" />
+    <Compile Include="FactoryMethod\Day1\Pizza.cs" />
+    <Compile Include="FactoryMethod\Day1\PizzaOrderApp.cs" />
+    <Compile Include="FactoryMethod\Day2\Pizza.cs" />
+    <Compile Include="FactoryMethod\Day2\PizzaOrderApp.cs" />
+    <Compile Include="FactoryMethod\Day3\Pizza.cs" />
+    <Compile Include="FactoryMethod\Day3\PizzaFactory.cs" />
+    <Compile Include="FactoryMethod\Day3\PizzaOrderApp.cs" />
+    <Compile Include="FactoryMethod\Day5\Pizza.cs" />
+    <Compile Include="FactoryMethod\Day5\PizzaFactory.cs" />
+    <Compile Include="FactoryMethod\Day5\PizzaOrderApp.cs" />
+    <Compile Include="FactoryMethod\Day4\Pizza.cs" />
+    <Compile Include="FactoryMethod\Day4\PizzaOrderApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

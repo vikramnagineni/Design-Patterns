@@ -1,13 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Design_Patterns.AbstractFactory.Day4
+namespace Design_Patterns.FactoryMethod.Day1
 {
-    public enum PizzaStoreLocation
-    {
-        Portland = 1,
-        Hillsboro
-    }
-
     public enum PizzaType
     {
         Cheese = 1,
@@ -15,28 +13,12 @@ namespace Design_Patterns.AbstractFactory.Day4
         Shoe
     }
 
-    // This is solution to problem outlined in Day3
     public static class PizzaOrderApp
     {
         public static void OrderPizza()
         {
             Console.WriteLine("Welcome!");
-            PizzaStoreLocation pizzaStoreLocation;
             PizzaType pizzaType;
-
-            bool pizzaStoreSelected;
-            do
-            {
-                Console.WriteLine("Please select pizza store");
-                Console.WriteLine("1.Portland");
-                Console.WriteLine("2.Hillsboro");
-                pizzaStoreSelected = Enum.TryParse(Console.ReadLine(), out pizzaStoreLocation);
-                if (!pizzaStoreSelected)
-                {
-                    Console.WriteLine("That's an invalid entry. Try again.");
-                }
-            }
-            while (!pizzaStoreSelected);
 
             bool pizzaTypeSelected;
             do
@@ -53,15 +35,26 @@ namespace Design_Patterns.AbstractFactory.Day4
             }
             while (!pizzaTypeSelected);
 
+            // These are the issues with the following code.
+            // 1. This method is responsible for creating a  particular type of Pizza(which is against single responsibility). Better pizza creation is delegated to someone else. The following code can get even more complex. Lets say we need to pass different parameters to create different types of pizzas. Or we want to order pizza from different stores.
+            // 2. Pizza creation code is not reusable.
+            // 3. If a new type of pizza is added, we need to add one more else condition which is against open/closed principle.
+
             Pizza pizza;
-            if (pizzaStoreLocation == PizzaStoreLocation.Portland)
+            if (pizzaType == PizzaType.Cheese)
             {
-                pizza = new PortlandPizzaStore().OrderPizza(pizzaType);
+                pizza = new CheesePizza();
+            }
+            else if (pizzaType == PizzaType.Clam)
+            {
+                pizza = new ClamPizza();
             }
             else
             {
-                pizza = new HillsboroPizzaStore().OrderPizza(pizzaType);
+                pizza = new ShoePizza();
             }
+
+            pizza.Create();
             Console.WriteLine("Your pizza is ready");
             Console.ReadLine();
         }

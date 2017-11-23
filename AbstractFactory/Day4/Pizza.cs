@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_Patterns.AbstractFactory.Day4
 {
@@ -32,109 +28,51 @@ namespace Design_Patterns.AbstractFactory.Day4
         }
     }
 
-    public class CheesePizza : Pizza
+    public class PortlandCheesePizza : Pizza
     {
-        IIngredientFactory ingredientFactory;
-
-        public CheesePizza(IIngredientFactory customIngredientFactory)
-        {
-            this.ingredientFactory = customIngredientFactory;
-        }
-
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Cheese pizza.");
+            Console.WriteLine("Preparing Portland - Cheese pizza.");
         }
     }
 
-    public class ClamPizza : Pizza
+    public class PortlandClamPizza : Pizza
     {
-        IIngredientFactory ingredientFactory;
-
-        public ClamPizza(IIngredientFactory customIngredientFactory)
-        {
-            this.ingredientFactory = customIngredientFactory;
-        }
-
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Clam pizza.");
+            Console.WriteLine("Preparing Portland - Clam pizza.");
         }
     }
 
-    public class ShoePizza : Pizza
+    public class PortlandShoePizza : Pizza
     {
-        IIngredientFactory ingredientFactory;
-
-        public ShoePizza(IIngredientFactory customIngredientFactory)
-        {
-            this.ingredientFactory = customIngredientFactory;
-        }
-
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Shoe pizza.");
+            Console.WriteLine("Preparing Portland - Shoe pizza.");
         }
     }
 
-    public abstract class PizzaStore
+    public class HillsboroCheesePizza : Pizza
     {
-        public PizzaType pizzaType { get; set; }
-        public IIngredientFactory IngredientFactory { get; set; }
-        public Pizza OrderPizza(PizzaType _pizzaType)
+        public override void Prepare()
         {
-            this.pizzaType = _pizzaType;
-            var pizza = this.CreatePizza();
-            pizza.Create();
-            return pizza;
-        }
-        public abstract Pizza CreatePizza();
-    }
-
-    public class PortlandPizzaStore : PizzaStore
-    {
-        public PortlandPizzaStore()
-        {
-            this.IngredientFactory = new PortlandIngredientFactory();
-        }
-        public override Pizza CreatePizza()
-        {
-            if(pizzaType == PizzaType.Cheese)
-            {
-                return new CheesePizza(this.IngredientFactory);
-            }
-            else if(pizzaType == PizzaType.Clam)
-            {
-                return new ClamPizza(this.IngredientFactory);
-            }
-            else
-            {
-                return new ShoePizza(this.IngredientFactory);
-            }
+            Console.WriteLine("Preparing Hillsboro - Cheese pizza.");
         }
     }
 
-    public class HillsboroPizzaStore : PizzaStore
+    public class HillsboroClamPizza : Pizza
     {
-        public HillsboroPizzaStore()
+        public override void Prepare()
         {
-            this.IngredientFactory = new HillsboroIngredientFactory();
+            Console.WriteLine("Preparing Hillsboro - Clam pizza.");
         }
+    }
 
-        public override Pizza CreatePizza()
+    public class HillsboroShoePizza : Pizza
+    {
+        public override void Prepare()
         {
-            if (pizzaType == PizzaType.Cheese)
-            {
-                return new CheesePizza(this.IngredientFactory);
-            }
-            else if (pizzaType == PizzaType.Clam)
-            {
-                return new ClamPizza(this.IngredientFactory);
-            }
-            else
-            {
-                return new ShoePizza(this.IngredientFactory);
-            }
+            Console.WriteLine("Preparing Hillsboro - Shoe pizza.");
         }
     }
 }

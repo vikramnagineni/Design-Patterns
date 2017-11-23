@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Design_Patterns.AbstractFactory.Day2
+namespace Design_Patterns.FactoryMethod.Day3
 {
     public enum PizzaType
     {
@@ -31,7 +35,7 @@ namespace Design_Patterns.AbstractFactory.Day2
             }
             while (!pizzaTypeSelected);
 
-            Pizza pizza = new PizzaFactory().OrderPizza(pizzaType);
+            Pizza pizza = new PizzaFactory().CreatePizza(pizzaType);
             Console.WriteLine("Your pizza is ready");
             Console.ReadLine();
         }

@@ -1,6 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Design_Patterns.AbstractFactory.Day4
+namespace Design_Patterns.FactoryMethod.Day5
 {
     public enum PizzaStoreLocation
     {
@@ -15,7 +19,6 @@ namespace Design_Patterns.AbstractFactory.Day4
         Shoe
     }
 
-    // This is solution to problem outlined in Day3
     public static class PizzaOrderApp
     {
         public static void OrderPizza()
@@ -62,6 +65,7 @@ namespace Design_Patterns.AbstractFactory.Day4
             {
                 pizza = new HillsboroPizzaStore().OrderPizza(pizzaType);
             }
+
             Console.WriteLine("Your pizza is ready");
             Console.ReadLine();
         }

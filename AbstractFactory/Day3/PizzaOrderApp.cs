@@ -1,18 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_Patterns.AbstractFactory.Day3
 {
-    // This is solution to problem outlined in Day1
+    public enum PizzaStoreLocation
+    {
+        Portland = 1,
+        Hillsboro
+    }
+
+    public enum PizzaType
+    {
+        Cheese = 1,
+        Clam,
+        Shoe
+    }
+
     public static class PizzaOrderApp
     {
         public static void OrderPizza()
         {
-            Console.WriteLine("Welcome !");
+            Console.WriteLine("Welcome!");
+            PizzaStoreLocation pizzaStoreLocation;
             PizzaType pizzaType;
+
+            bool pizzaStoreSelected;
+            do
+            {
+                Console.WriteLine("Please select pizza store");
+                Console.WriteLine("1.Portland");
+                Console.WriteLine("2.Hillsboro");
+                pizzaStoreSelected = Enum.TryParse(Console.ReadLine(), out pizzaStoreLocation);
+                if (!pizzaStoreSelected)
+                {
+                    Console.WriteLine("That's an invalid entry. Try again.");
+                }
+            }
+            while (!pizzaStoreSelected);
 
             bool pizzaTypeSelected;
             do
@@ -29,7 +52,45 @@ namespace Design_Patterns.AbstractFactory.Day3
             }
             while (!pizzaTypeSelected);
 
-            Pizza pizza = new PizzaFactory().CreatePizza(pizzaType);
+            // These are the problems with following code.
+            // 1. This method is doing many things against single responsiblity. This method is responsible for creating a  particular type of Pizza. Better pizza creation is delegated to someone else. The following code can get even more complex. Lets say we need pass different type of parameter to create different types of pizzas. Or we want to order pizza from different stores.
+            // 2. Pizza creation code is not reusable.
+            // 3. If a new type of pizza store location is added, we need to add one more else condition against open/closed principle.
+
+            // This is the right time to use Abstract factory pattern, because Abstract Factory is about creating families of related or dependent products.
+            Pizza pizza;
+            if (pizzaStoreLocation == PizzaStoreLocation.Portland)
+            {
+                if(pizzaType == PizzaType.Cheese)
+                {
+                    pizza = new PortlandCheesePizza();
+                }
+                else if (pizzaType == PizzaType.Clam)
+                {
+                    pizza = new PortlandClamPizza();
+                }
+                else
+                {
+                    pizza = new PortlandShoePizza();
+                }
+            }
+            else
+            {
+                if (pizzaType == PizzaType.Cheese)
+                {
+                    pizza = new HillsboroCheesePizza();
+                }
+                else if (pizzaType == PizzaType.Clam)
+                {
+                    pizza = new HillsboroClamPizza();
+                }
+                else
+                {
+                    pizza = new HillsboroShoePizza();
+                }
+            }
+
+            pizza.Create();
             Console.WriteLine("Your pizza is ready");
             Console.ReadLine();
         }
