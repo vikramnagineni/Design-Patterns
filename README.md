@@ -1,4 +1,12 @@
 # Design-Patterns
+I have explained each design pattern starting from day1 to dayn.
+- Day1 - I will start implementing requirement without using design pattern and i will explain what are the issues due to that.
+- Day2 - Improve the code using design pattern(or) implement the new requirement from customer
+- Day3 - ....
+.
+.
+.
+- Dayn - You will come to know the why, when and how to use the design pattern
 
 ## Difference b/w Factory Method and Abstract factory.
 ### 1.Factory Method:
@@ -10,4 +18,3 @@ A factory that creates other factories, and these factories in turn create objec
 Imagine you are constructing a house and you approach a carpenter for a door. You give the measurement for the door and your requirements, and he will construct a door for you. In this case, the carpenter is a factory of doors. Your specifications are inputs for the factory, and the door is the output or product from the factory.
 ### Abstract Factory:
 Now, consider the same example of the door. You can go to a carpenter, or you can go to a plastic door shop or a PVC shop. All of them are door factories. Based on the situation, you decide what kind of factory you need to approach. This is like an Abstract Factory.
-
