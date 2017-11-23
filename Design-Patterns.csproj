@@ -50,12 +50,16 @@
     <Compile Include="AbstractFactory\Day3\Pizza.cs" />
     <Compile Include="AbstractFactory\Day3\PizzaFactory.cs" />
     <Compile Include="AbstractFactory\Day3\PizzaOrderApp.cs" />
+    <Compile Include="AbstractFactory\Day4\IIngredientFactory.cs" />
+    <Compile Include="AbstractFactory\Day4\Pizza.cs" />
+    <Compile Include="AbstractFactory\Day4\PizzaOrderApp.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -8,11 +8,6 @@ namespace Design_Patterns.AbstractFactory.Day2
 {
     public abstract class Pizza
     {
-        public PizzaType pizzaType { get; set; }
-        public Pizza(PizzaType _pizzaType)
-        {
-            pizzaType = _pizzaType;
-        }
         public void Create()
         {
             Prepare();
@@ -37,49 +32,51 @@ namespace Design_Patterns.AbstractFactory.Day2
         }
     }
 
-    public class PortlandPizza : Pizza
+    public class PortlandCheesePizza : Pizza
     {
-        public PortlandPizza(PizzaType pizzaType) : base(pizzaType)
-        {
-
-        }
         public override void Prepare()
         {
-            if (pizzaType == PizzaType.Cheese)
-            {
-                Console.WriteLine("Preparing Portland - Cheese pizza.");
-            }
-            else if (pizzaType == PizzaType.Clam)
-            {
-                Console.WriteLine("Preparing Portland - Clam pizza.");
-            }
-            if (pizzaType == PizzaType.Shoe)
-            {
-                Console.WriteLine("Preparing Portland - Shoe pizza.");
-            }
+            Console.WriteLine("Preparing Portland - Cheese pizza.");
         }
     }
 
-    public class Hillsboro : Pizza
+    public class PortlandClamPizza : Pizza
     {
-        public Hillsboro(PizzaType pizzaType) : base(pizzaType)
-        {
-
-        }
         public override void Prepare()
         {
-            if (pizzaType == PizzaType.Cheese)
-            {
-                Console.WriteLine("Preparing Hillsboro - Cheese pizza.");
-            }
-            else if (pizzaType == PizzaType.Clam)
-            {
-                Console.WriteLine("Preparing Hillsboro - Clam pizza.");
-            }
-            if (pizzaType == PizzaType.Shoe)
-            {
-                Console.WriteLine("Preparing Hillsboro - Shoe pizza.");
-            }
+            Console.WriteLine("Preparing Portland - Clam pizza.");
+        }
+    }
+
+    public class PortlandShoePizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Portland - Shoe pizza.");
+        }
+    }
+
+    public class HillsboroCheesePizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Cheese pizza.");
+        }
+    }
+
+    public class HillsboroClamPizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Clam pizza.");
+        }
+    }
+
+    public class HillsboroShoePizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Shoe pizza.");
         }
     }
 }

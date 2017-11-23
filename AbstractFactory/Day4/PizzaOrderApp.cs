@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Design_Patterns.AbstractFactory.Day2
+namespace Design_Patterns.AbstractFactory.Day4
 {
+    // This is solution to problem outlined in Day2
     public enum PizzaStoreLocation
     {
         Portland = 1,
@@ -56,40 +57,14 @@ namespace Design_Patterns.AbstractFactory.Day2
             }
             while (!pizzaTypeSelected);
 
-            // These are the problems with following code.
-            // 1. This method is doing many things against single responsiblity. This method is responsible for creating a  particular type of Pizza. Better pizza creation is delegated to someone else. The following code can get even more complex. Lets say we need pass different type of parameter to create different types of pizzas. Or we want to order pizza from different stores.
-            // 2. Pizza creation code is not reusable.
-            // 3. If a new type of pizza store location is added, we need to add one more else condition against open/closed principle.
             Pizza pizza;
             if (pizzaStoreLocation == PizzaStoreLocation.Portland)
             {
-                if(pizzaType == PizzaType.Cheese)
-                {
-                    pizza = new PortlandCheesePizza();
-                }
-                else if (pizzaType == PizzaType.Clam)
-                {
-                    pizza = new PortlandClamPizza();
-                }
-                else
-                {
-                    pizza = new PortlandShoePizza();
-                }
+                pizza = new PortlandPizzaStore().OrderPizza(pizzaType);
             }
             else
             {
-                if (pizzaType == PizzaType.Cheese)
-                {
-                    pizza = new HillsboroCheesePizza();
-                }
-                else if (pizzaType == PizzaType.Clam)
-                {
-                    pizza = new HillsboroClamPizza();
-                }
-                else
-                {
-                    pizza = new HillsboroShoePizza();
-                }
+                pizza = new HillsboroPizzaStore().OrderPizza(pizzaType);
             }
 
             pizza.Create();
