@@ -1,12 +1,9 @@
 # Design-Patterns
-I have explained each design pattern starting from day1 to dayn.
-- Day1 - I will start implementing requirement without using design pattern and i will explain what are the issues due to that.
+I have explained each design pattern starting from day1(from no design pattern) to dayn(full usage of design pattern).
+- Day1 - I start implementing requirements given by customer without using design pattern and i will explain what are the problems I face.
 - Day2 - Improve the code using design pattern(or) implement the new requirement from customer
-- Day3 - ....
-.
-.
-.
-- Dayn - You will come to know the why, when and how to use the design pattern
+- Day3 - ..........
+- Dayn - By last day, You will understand why, when and how to use the design pattern
 
 ## Difference b/w Factory Method and Abstract factory.
 ### 1.Factory Method:
