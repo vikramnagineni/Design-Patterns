@@ -23,7 +23,10 @@ namespace Design_Patterns
             AbstractFactory.Day4.PizzaOrderApp.OrderPizza();
 
             // Adapter Pattern
-            AdapterPattern.Day1.
+            AdapterPattern.Day1.DocumentStorageServiceApp.Run();
+            AdapterPattern.Day2.DocumentStorageServiceApp.Run();
+            AdapterPattern.Day3.DocumentStorageServiceApp.Run();
+
         }
     }
 }
