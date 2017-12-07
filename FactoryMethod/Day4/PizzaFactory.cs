@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-// You can see below, we are solving problem with multiple factory methods.
+﻿// You can see below, we are solving problem with multiple factory methods.
 // This might be the time to switch to Abstract factory pattern due to following locations.
 // 1. Because lets assume there is some common code b/w following two methods. You want to move it to abstract base class. 
 // 2. Assuming you are the owner of pizza stores, lets say irrespective of pizza store location, you want to define common process of creating pizzas. The you need to define your contracts in abstract base class. For more details, see abstract factory pattern
-namespace Design_Patterns.FactoryMethod.Day5
+namespace Design_Patterns.FactoryMethod.Day4
 {
     public class PortlandPizzaStore
     {

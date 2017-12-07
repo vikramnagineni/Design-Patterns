@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Design_Patterns.FactoryMethod.Day3
 {
@@ -32,27 +28,51 @@ namespace Design_Patterns.FactoryMethod.Day3
         }
     }
 
-    public class CheesePizza : Pizza
+    public class PortlandCheesePizza : Pizza
     {
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Cheese pizza.");
+            Console.WriteLine("Preparing Portland - Cheese pizza.");
         }
     }
 
-    public class ClamPizza : Pizza
+    public class PortlandClamPizza : Pizza
     {
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Clam pizza.");
+            Console.WriteLine("Preparing Portland - Clam pizza.");
         }
     }
 
-    public class ShoePizza : Pizza
+    public class PortlandShoePizza : Pizza
     {
         public override void Prepare()
         {
-            Console.WriteLine("Preparing Shoe pizza.");
+            Console.WriteLine("Preparing Portland - Shoe pizza.");
         }
-    }    
+    }
+
+    public class HillsboroCheesePizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Cheese pizza.");
+        }
+    }
+
+    public class HillsboroClamPizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Clam pizza.");
+        }
+    }
+
+    public class HillsboroShoePizza : Pizza
+    {
+        public override void Prepare()
+        {
+            Console.WriteLine("Preparing Hillsboro - Shoe pizza.");
+        }
+    }
 }

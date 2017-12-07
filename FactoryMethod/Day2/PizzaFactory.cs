@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Design_Patterns.FactoryMethod.Day3
+﻿namespace Design_Patterns.FactoryMethod.Day2
 {
     public class PizzaFactory
     {
