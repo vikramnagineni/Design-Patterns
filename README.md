@@ -6,7 +6,7 @@ I have explained each design pattern starting from day1(from no design pattern) 
 - Dayn - By last day, You will understand why, when and how to use the design pattern
 
 ## Definitions:
-**Decorator Pattern:**
+### Decorator Pattern:
 Allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.[1] The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
 
 ## Difference b/w Factory Method and Abstract factory.
