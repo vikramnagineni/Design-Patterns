@@ -5,6 +5,10 @@ I have explained each design pattern starting from day1(from no design pattern) 
 - Day3 - ..........
 - Dayn - By last day, You will understand why, when and how to use the design pattern
 
+## Definitions:
+**Decorator Pattern:**
+Allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.[1] The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
+
 ## Difference b/w Factory Method and Abstract factory.
 ### 1.Factory Method:
 A factory that creates objects that derive from a particular base class.
@@ -16,7 +20,4 @@ Imagine you are constructing a house and you approach a carpenter for a door. Yo
 ### Abstract Factory:
 Now, consider the same example of the door. You can go to a carpenter, or you can go to a plastic door shop or a PVC shop. All of them are door factories. Based on the situation, you decide what kind of factory you need to approach. This is like an Abstract Factory.
 
-## Definitions:
-**Decorator Pattern:**
-Allows behavior to be added to an individual object, either statically or dynamically, without affecting the behavior of other objects from the same class.[1] The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern.
 
