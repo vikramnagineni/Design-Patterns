@@ -33,6 +33,8 @@ namespace Design_Patterns.AdapterPattern.Day3
             while (!storageTargetSelected);
 
             // Now we have created common interface IDocumentStorageService for document storage. And we have created adapter for each storage target which transforms calls from our common interface to particular storage target.
+
+            // Still the issue is, we are using if else conditions to select adapter.
             IDocumentStorageService documentStorageService = new AWSS3StorageAdapter();
             if (storageTarget == StorageTarget.Azure)
             {
